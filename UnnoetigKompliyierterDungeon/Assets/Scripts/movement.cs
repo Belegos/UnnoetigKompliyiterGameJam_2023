@@ -90,10 +90,7 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag == ("Ground"))
         {
             isGrounded = true;
-            if(bufferTimeCounter > 0f && isGrounded)
-            {
-                canJump = true;
-            }
+            canJump = true;
         }
     }
 }
