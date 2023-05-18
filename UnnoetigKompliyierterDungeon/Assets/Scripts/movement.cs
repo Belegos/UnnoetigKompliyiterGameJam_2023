@@ -9,7 +9,11 @@ public class movement : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
 
     [SerializeField] private float movespeed = 5f;
-    Vector3 _moveValue;
+    [SerializeField] private float jumpBoost = 5f;
+
+    [SerializeField] private bool canJump = false;
+
+    Vector2 _moveValue;
     #endregion
 
 
@@ -29,5 +33,27 @@ public class movement : MonoBehaviour
     public void UpdateMove(InputAction.CallbackContext ctx)
     {
         _moveValue = ctx.ReadValue<Vector2>();
+    }
+
+    public void UpdateJump(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            if (canJump)
+            {
+                _rb.AddForce(Vector3.up * jumpBoost, ForceMode.Impulse);
+            }
+            canJump = false;
+        }
+
+        Debug.Log(ctx);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == ("Ground"))
+        {
+            canJump = true;
+        }
     }
 }
