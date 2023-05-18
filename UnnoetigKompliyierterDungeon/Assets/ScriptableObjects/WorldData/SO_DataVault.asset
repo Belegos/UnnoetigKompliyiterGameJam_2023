@@ -20,3 +20,5 @@ MonoBehaviour:
   - {fileID: 0}
   prefab_trueTrap:
   - {fileID: 0}
+  Wall:
+  - {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
