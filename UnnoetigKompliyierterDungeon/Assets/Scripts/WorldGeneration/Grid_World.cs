@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Grid_World : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Vector2Int[,] _placementGrid;
+
+    public Grid_World(int height, int width) 
     {
-        
+        _placementGrid = new Vector2Int[height, width];
+    }
+    public Vector2Int[,] GetPlacementGrid 
+    {
+     get { return _placementGrid; }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
