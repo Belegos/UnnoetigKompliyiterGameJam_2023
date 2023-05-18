@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class movement : MonoBehaviour
 {
     #region Fields
+    
     [SerializeField] private Rigidbody _rb;
 
     [SerializeField] private float movespeed = 5f;
+    [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float jumpBoost = 5f;
 
     [SerializeField] private bool canJump = false;
@@ -21,7 +24,6 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        
     }
 
     // Update is called once per frame
@@ -45,8 +47,6 @@ public class movement : MonoBehaviour
             }
             canJump = false;
         }
-
-        Debug.Log(ctx);
     }
 
     private void OnCollisionEnter(Collision collision)
