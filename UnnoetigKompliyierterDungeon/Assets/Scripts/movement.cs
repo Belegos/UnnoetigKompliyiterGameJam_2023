@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,7 +15,13 @@ public class movement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float jumpBoost = 5f;
 
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float bufferTime = 0.2f;
+    [SerializeField] private float coyoteTimeCounter;
+    [SerializeField] private float bufferTimeCounter;
+
     [SerializeField] private bool canJump = false;
+    [SerializeField] private bool isGrounded = false;
 
     Vector2 _moveValue;
     #endregion
@@ -24,6 +31,29 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+            if(coyoteTimeCounter < 0)
+            {
+                coyoteTimeCounter = 0;
+            }
+            
+            bufferTimeCounter -= Time.deltaTime;
+            if(bufferTimeCounter < 0)
+            {
+                bufferTimeCounter = 0;
+            }
+            
+        }
     }
 
     // Update is called once per frame
@@ -41,11 +71,17 @@ public class movement : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (canJump)
+            bufferTimeCounter = bufferTime;
+
+            if(bufferTimeCounter > 0f || coyoteTimeCounter > 0f)
             {
-                _rb.AddForce(Vector3.up * jumpBoost, ForceMode.Impulse);
+                if (canJump)
+                {
+                    _rb.AddForce(Vector3.up * jumpBoost, ForceMode.Impulse);
+                }
+                canJump = false;
+                isGrounded = false;
             }
-            canJump = false;
         }
     }
 
@@ -54,6 +90,7 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag == ("Ground"))
         {
             canJump = true;
+            isGrounded = true;
         }
     }
 }
