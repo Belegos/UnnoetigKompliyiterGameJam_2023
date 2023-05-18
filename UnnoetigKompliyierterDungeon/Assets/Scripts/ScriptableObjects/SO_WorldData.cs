@@ -9,4 +9,5 @@ public class SO_WorldData : ScriptableObject
     [SerializeField] public GameObject[] prefab_tile;
     [SerializeField] public GameObject[] prefab_falseTrap;
     [SerializeField] public GameObject[] prefab_trueTrap;
+    [SerializeField] public GameObject[] Wall;
 }
