@@ -11,29 +11,29 @@ public class movement : MonoBehaviour
     #region Fields
     
     [SerializeField] GameObject _player;
-    [SerializeField] GameObject _virtCam;
-
     [SerializeField] private Rigidbody _rb;
-    [SerializeField] private CinemachineVirtualCamera _camera;
 
-    [SerializeField] private float jumpBoost = 5f;
+    [SerializeField] private float jumpBoost = 3f;
+
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
+
     [SerializeField] private float coyoteTimeCounter;
     [SerializeField] private float bufferTimeCounter;
 
     [SerializeField] private bool hasJumped = false;
     [SerializeField] private bool isGrounded = false;
 
-    Vector2 _moveValue;
+    private Vector2 _moveValue;
+    private Vector3 offset;
+
     #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-        _camera = GetComponent<CinemachineVirtualCamera>();
+        _rb = GetComponent<Rigidbody>();        
     }
 
     void Update()
@@ -77,13 +77,11 @@ public class movement : MonoBehaviour
 
         if(_rb.velocity.x > 0)
         {
-            _player.transform.Translate(Vector3.right * 1.3f * Time.deltaTime);
-
+            _player.transform.Translate(Vector3.right * 1.3f * Time.deltaTime);            
         }
         else if(_rb.velocity.x < 0)
         {
-            _player.transform.Translate(Vector3.left * 1.3f * Time.deltaTime);
-
+            _player.transform.Translate(Vector3.left * 1.3f * Time.deltaTime);            
         }
     }
 
