@@ -12,4 +12,5 @@ public class SO_WorldData : ScriptableObject
     [SerializeField] public GameObject[] Wall;
     [SerializeField] public GameObject Start;
     [SerializeField] public GameObject Finish;
+    [SerializeField] public GameObject BigTrap;
 }
