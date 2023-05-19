@@ -41,4 +41,9 @@ public class PlayerData : MonoBehaviour
         _name = Data.Name;
         Health = Data.Health;
     }
+
+    public void ReduceHealth(int damage)
+    {
+        Health = _health - damage;
+    }
 }
