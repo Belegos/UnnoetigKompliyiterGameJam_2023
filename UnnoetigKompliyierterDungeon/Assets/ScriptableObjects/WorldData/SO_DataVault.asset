@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SO_DataVault
   m_EditorClassIdentifier: 
   prefab_tile:
-  - {fileID: 100000, guid: 9f00cae941aaaa142ade9d9171b47d06, type: 3}
-  - {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
-  - {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+  - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
+  - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
+  - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
   prefab_falseTrap:
   - {fileID: 264499664061011048, guid: 3c3ba10a653207f478adfcef5cb1b237, type: 3}
   - {fileID: 264499664061011048, guid: 3c3ba10a653207f478adfcef5cb1b237, type: 3}
@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 7176134261591999356, guid: a46d7e0bcb512304894b0cb59a696045, type: 3}
   - {fileID: 7176134261591999356, guid: a46d7e0bcb512304894b0cb59a696045, type: 3}
   Wall:
-  - {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
-  - {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+  - {fileID: 8662377918042668974, guid: 7f32e45a6849c404b9ae16bc21624186, type: 3}
+  - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
   Start: {fileID: 443350987439494554, guid: 40e0e7ab927640d428fb9ff72eeaf96d, type: 3}
   Finish: {fileID: 2229022802427576886, guid: 1c404c266b5be4d4ea4b6ddb99b8c23c, type: 3}

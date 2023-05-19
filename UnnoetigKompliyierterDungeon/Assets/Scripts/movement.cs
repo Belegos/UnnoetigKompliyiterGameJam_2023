@@ -1,3 +1,4 @@
+using Cinemachine;
 using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,22 +10,20 @@ public class movement : MonoBehaviour
 {
     #region Fields
     
-    [SerializeField] private Rigidbody _rb;
     [SerializeField] GameObject _player;
+    [SerializeField] GameObject _virtCam;
 
-    [SerializeField] private float movespeed = 5f;
-    // [SerializeField] private float rotationSpeed = 5f;
+    [SerializeField] private Rigidbody _rb;
+    [SerializeField] private CinemachineVirtualCamera _camera;
+
     [SerializeField] private float jumpBoost = 5f;
-
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
     [SerializeField] private float coyoteTimeCounter;
     [SerializeField] private float bufferTimeCounter;
 
-    [SerializeField] private bool canJump = false;
+    [SerializeField] private bool hasJumped = false;
     [SerializeField] private bool isGrounded = false;
-
-    // private float prevPositionZ;
 
     Vector2 _moveValue;
     #endregion
@@ -34,6 +33,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _camera = GetComponent<CinemachineVirtualCamera>();
     }
 
     void Update()
@@ -41,6 +41,7 @@ public class movement : MonoBehaviour
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
+            hasJumped = false;
         }
         else
         {
@@ -56,14 +57,13 @@ public class movement : MonoBehaviour
                 bufferTimeCounter = 0;
             }
 
-            // prevPositionZ = _player.transform.position.z;
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rb.velocity = new Vector3(_moveValue.x * Time.deltaTime * movespeed, _rb.velocity.y, _moveValue.y * Time.deltaTime);
+        _rb.velocity = new Vector3(_moveValue.x * Time.deltaTime, _rb.velocity.y, _moveValue.y * Time.deltaTime);
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
@@ -73,6 +73,17 @@ public class movement : MonoBehaviour
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
             _player.transform.Translate(Vector3.back * 1.1f * Time.deltaTime);
+        }
+
+        if(_rb.velocity.x > 0)
+        {
+            _player.transform.Translate(Vector3.right * 1.1f * Time.deltaTime);
+
+        }
+        else if(_rb.velocity.x < 0)
+        {
+            _player.transform.Translate(Vector3.left * 1.1f * Time.deltaTime);
+
         }
     }
 
@@ -87,13 +98,14 @@ public class movement : MonoBehaviour
         {
             bufferTimeCounter = bufferTime;
 
-            if(bufferTimeCounter > 0f || coyoteTimeCounter > 0f)
+            if(bufferTimeCounter > 0f && coyoteTimeCounter > 0f)
             {
-                if (canJump)
+                if (!hasJumped)
                 {
                     _rb.AddForce(Vector3.up * jumpBoost, ForceMode.Impulse);
                 }
-                canJump = false;
+                
+                hasJumped = true;
                 isGrounded = false;
             }
         }
@@ -104,7 +116,6 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag == ("Ground"))
         {
             isGrounded = true;
-            canJump = true;
         }
     }
 }
