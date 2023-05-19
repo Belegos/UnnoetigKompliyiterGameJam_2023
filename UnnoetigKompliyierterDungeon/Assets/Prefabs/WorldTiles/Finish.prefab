@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4198400081826089686}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,6 +52,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Floor_2x2_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_TagString
+      value: Ceiling
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_RootOrder
@@ -135,6 +143,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_Wall_2x3_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -216,6 +232,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Floor_2x2_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_TagString
+      value: Ceiling
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_RootOrder
@@ -299,6 +323,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_Wall_2x3_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -380,6 +412,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Wall_2x3_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_RootOrder
@@ -463,6 +503,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_Wall_2x3_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -544,6 +592,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Wall_2x3_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
       propertyPath: m_RootOrder
@@ -627,6 +683,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_Floor_2x2_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -708,6 +772,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Floor_2x2_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_TagString
+      value: Ceiling
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_RootOrder
@@ -791,6 +863,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_Floor_2x2_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -872,6 +952,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Floor_2x2_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
       propertyPath: m_RootOrder

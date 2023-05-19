@@ -1242,7 +1242,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &5105579921041507415
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1270,16 +1270,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 5106758614903836687}
-  _virtCam: {fileID: 0}
   _rb: {fileID: 5105579921041507421}
-  _camera: {fileID: 0}
   jumpBoost: 5
+  bounce: 3
   coyoteTime: 0.2
   bufferTime: 0.2
+  groundedTime: 2
   coyoteTimeCounter: 0
   bufferTimeCounter: 0
+  isGroundedCounter: 0
   hasJumped: 0
   isGrounded: 0
+  isBouncing: 0
 --- !u!114 &5105579921041507411
 MonoBehaviour:
   m_ObjectHideFlags: 0

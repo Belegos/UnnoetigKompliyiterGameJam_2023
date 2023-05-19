@@ -6,11 +6,24 @@ TagManager:
   tags:
   - Ground
   - Camera
+  - Wall
+  - FakeTrap
+  - Ceiling
+  - Start
+  - Exit
+  - Plus
+  - Minus
+  - Options
+  - MainMenu
+  - OptionsMenu
+  - Back
+  - 1080p
+  - 720p
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
   - 

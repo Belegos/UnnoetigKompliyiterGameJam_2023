@@ -8,10 +8,10 @@ using UnityEngine.Events;
 public class GoalLine : MonoBehaviour
 {
     public UnityEvent OnPlayerEntering;
-    
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision other)
     {
-        // Check if player enters
+        if (!other.gameObject.CompareTag("Player")) return;
         OnPlayerEntering.Invoke();
     }
 }
