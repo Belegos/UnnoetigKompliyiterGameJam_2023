@@ -1,3 +1,4 @@
+using Cinemachine;
 using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,11 +10,13 @@ public class movement : MonoBehaviour
 {
     #region Fields
     
-    [SerializeField] private Rigidbody _rb;
     [SerializeField] GameObject _player;
+    [SerializeField] GameObject _virtCam;
+
+    [SerializeField] private Rigidbody _rb;
+    [SerializeField] private CinemachineVirtualCamera _camera;
 
     [SerializeField] private float jumpBoost = 5f;
-
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
     [SerializeField] private float coyoteTimeCounter;
@@ -30,6 +33,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _camera = GetComponent<CinemachineVirtualCamera>();
     }
 
     void Update()
@@ -74,10 +78,12 @@ public class movement : MonoBehaviour
         if(_rb.velocity.x > 0)
         {
             _player.transform.Translate(Vector3.right * 1.1f * Time.deltaTime);
+            _virtCam.
         }
         else if(_rb.velocity.x < 0)
         {
             _player.transform.Translate(Vector3.left * 1.1f * Time.deltaTime);
+
         }
     }
 
