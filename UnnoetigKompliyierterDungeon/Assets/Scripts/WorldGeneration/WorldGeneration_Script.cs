@@ -49,12 +49,17 @@ public class WorldGeneration_Script : MonoBehaviour
             int offSetZTileOne = +4; //off set Position of the first tile
             int offSetZTileTwo = +1; //off set Position of the second tile
             int offSetZTileThree = -2; //off set Position of the third tile
+
+            var one = _data.prefab_trueTrap;
+            int rndIndex = 0;
             for (int j = 0; j < _height; j++) // x achse
             {
                 if (indexHeight == 0)
                 {
-                    int rndIndex = Random.Range(0, _data.prefab_trueTrap.Length);
-                    _placeThis = Instantiate(_data.prefab_tile[rndIndex], currentRow.transform);
+                    one = ChooseRndArrayTile(_data, one);
+                    //floortile 1
+                    rndIndex = Random.Range(0, one.Length);
+                    _placeThis = Instantiate(one[rndIndex], currentRow.transform);
                     _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileOne);
                     //roof 1
                     _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
@@ -63,18 +68,23 @@ public class WorldGeneration_Script : MonoBehaviour
 
                 if (indexHeight == 1)
                 {
-                    int rndIndex = Random.Range(0, _data.prefab_trueTrap.Length);
-                    _placeThis = Instantiate(_data.prefab_tile[rndIndex], currentRow.transform);
+                    one = ChooseRndArrayTile(_data, one);
+                    //floortile2
+                    rndIndex = Random.Range(0, one.Length);
+                    _placeThis = Instantiate(one[rndIndex], currentRow.transform);
                     _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileTwo);
                     //roof 2
                     _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileTwo);                    
+                    _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileTwo);
                 }
+
 
                 if (indexHeight == 2)
                 {
-                    int rndIndex = Random.Range(0, _data.prefab_trueTrap.Length);
-                    _placeThis = Instantiate(_data.prefab_tile[rndIndex], currentRow.transform);
+                    one = ChooseRndArrayTile(_data, one);
+                    //floortile 3
+                    rndIndex = Random.Range(0, one.Length);
+                    _placeThis = Instantiate(one[rndIndex], currentRow.transform);
                     _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileThree);
                     //roof 3
                     _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
@@ -85,10 +95,11 @@ public class WorldGeneration_Script : MonoBehaviour
                 if (indexHeight == _maxHeight)
                 {
                     _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, _wallOffset, indexHeight * 2); //left wall
+                    _placeThis.transform.position =
+                        new Vector3(indexWidth * 2, _wallOffset, indexHeight * 2); //left wall
                     _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, _wallOffset, 0);                //right wall
-                    
+                    _placeThis.transform.position = new Vector3(indexWidth * 2, _wallOffset, 0); //right wall
+
                     indexHeight = 0;
                     indexWidth++;
                     rowCount++;
@@ -96,10 +107,38 @@ public class WorldGeneration_Script : MonoBehaviour
             }
         }
 
-                Vector3 FinishPosition = _placeThis.transform.position;
-                Debug.Log("The last Tile has the postion:" + _placeThis.transform.position.ToString());
-                _placeThis = Instantiate(_data.Finish, _thisTransform);
-                _placeThis.transform.position = FinishPosition + new Vector3(4, 0.1f, 6.1f);
-                Debug.Log("Generated Grid: " + _height + "," + _width + "in GameObject: ", gameObject);
+        Vector3 FinishPosition = _placeThis.transform.position;
+        Debug.Log("The last Tile has the postion:" + _placeThis.transform.position.ToString());
+        _placeThis = Instantiate(_data.Finish, _thisTransform);
+        _placeThis.transform.position = FinishPosition + new Vector3(4, 0.1f, 6.1f);
+        Debug.Log("Generated Grid: " + _height + "," + _width + "in GameObject: ", gameObject);
+    }
+
+    private static GameObject[] ChooseRndArrayTile(SO_WorldData _data, GameObject[] one)
+    {
+        int rndArray = Random.Range(0, 5);
+        switch (rndArray)
+        {
+            case 0:
+                one = _data.prefab_trueTrap;
+                break;
+            case 1:
+                one = _data.prefab_falseTrap;
+                break;
+            case 2:
+                one = _data.prefab_tile;
+                break;
+            case 3:
+                one = _data.prefab_tile;
+                break;
+            case 4:
+                one = _data.prefab_tile;
+                break;
+            case 5:
+                one = _data.prefab_tile;
+                break;
+        }
+
+        return one;
     }
 }
