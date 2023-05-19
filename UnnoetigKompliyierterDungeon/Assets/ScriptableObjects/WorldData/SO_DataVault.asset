@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 0}
   Wall:
   - {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+  - {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
