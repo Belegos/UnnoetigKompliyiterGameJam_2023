@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 264499664062171240}
   - component: {fileID: 264499664063269544}
   - component: {fileID: 2608734267728261661}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trap_False
   m_TagString: FakeTrap
   m_Icon: {fileID: 0}
@@ -110,6 +110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_FloorHole_1x1_01P
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -172,6 +176,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bef96b6e1cd37444fa6937ae99361014, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Floor_1x1_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bef96b6e1cd37444fa6937ae99361014, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bef96b6e1cd37444fa6937ae99361014, type: 3}
       propertyPath: m_RootOrder

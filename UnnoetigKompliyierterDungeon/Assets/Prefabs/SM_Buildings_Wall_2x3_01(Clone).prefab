@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1628145975140231377}
   - component: {fileID: 3580349784491298375}
   - component: {fileID: 1307272922041441288}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Buildings_Wall_2x3_01(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
