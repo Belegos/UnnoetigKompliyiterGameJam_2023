@@ -19,7 +19,7 @@ public class movement : MonoBehaviour
     [SerializeField] private float coyoteTimeCounter;
     [SerializeField] private float bufferTimeCounter;
 
-    [SerializeField] private bool canJump = false;
+    [SerializeField] private bool hasJumped = false;
     [SerializeField] private bool isGrounded = false;
 
     Vector2 _moveValue;
@@ -37,6 +37,7 @@ public class movement : MonoBehaviour
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
+            hasJumped = false;
         }
         else
         {
@@ -52,7 +53,6 @@ public class movement : MonoBehaviour
                 bufferTimeCounter = 0;
             }
 
-            // prevPositionZ = _player.transform.position.z;
         }
     }
 
@@ -92,13 +92,14 @@ public class movement : MonoBehaviour
         {
             bufferTimeCounter = bufferTime;
 
-            if(bufferTimeCounter > 0f || coyoteTimeCounter > 0f)
+            if(bufferTimeCounter > 0f && coyoteTimeCounter > 0f)
             {
-                if (canJump)
+                if (!hasJumped)
                 {
                     _rb.AddForce(Vector3.up * jumpBoost, ForceMode.Impulse);
                 }
-                canJump = false;
+                
+                hasJumped = true;
                 isGrounded = false;
             }
         }
@@ -109,7 +110,6 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag == ("Ground"))
         {
             isGrounded = true;
-            canJump = true;
         }
     }
 }
