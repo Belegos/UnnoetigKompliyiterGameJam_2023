@@ -1,0 +1,325 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+--- !u!1 &2665765686965957568
+=======
+--- !u!1 &1350039826157455138
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+  - component: {fileID: 2665765686965465056}
+  - component: {fileID: 2665765686968856512}
+  - component: {fileID: 2665765686967889152}
+=======
+  - component: {fileID: 1350039826157099778}
+  - component: {fileID: 1350039826154199842}
+  - component: {fileID: 1350039826155198946}
+  - component: {fileID: 1608027549765473737}
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab
+  m_Layer: 0
+  m_Name: TestSpringTrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+--- !u!4 &2665765686965465056
+=======
+--- !u!4 &1350039826157099778
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+  m_GameObject: {fileID: 2665765686965957568}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4442330467172493754}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2665765686968856512
+=======
+  m_GameObject: {fileID: 1350039826157455138}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2570031843126784706}
+  - {fileID: 248950989699614094}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1350039826154199842
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+  m_GameObject: {fileID: 2665765686965957568}
+  m_Mesh: {fileID: 4300000, guid: e0e60385ca7898242b4e07f84e90d728, type: 3}
+--- !u!23 &2665765686967889152
+=======
+  m_GameObject: {fileID: 1350039826157455138}
+  m_Mesh: {fileID: 4300000, guid: 9f00cae941aaaa142ade9d9171b47d06, type: 3}
+--- !u!23 &1350039826155198946
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+  m_GameObject: {fileID: 2665765686965957568}
+=======
+  m_GameObject: {fileID: 1350039826157455138}
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 605d8a55811560b4690dcdcc317d14d1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD:UnnoetigKompliyierterDungeon/Assets/Prefabs/Trap.prefab
+--- !u!1001 &4442330467172102970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2665765686965465056}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_Name
+      value: SM_Buildings_FloorHole_1x1_01P
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1493d176cf288564ea48497dc492a25d, type: 3}
+--- !u!4 &4442330467172493754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 1493d176cf288564ea48497dc492a25d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4442330467172102970}
+  m_PrefabAsset: {fileID: 0}
+=======
+--- !u!65 &1608027549765473737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350039826157455138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.099999994, z: 2}
+  m_Center: {x: 1, y: -0.049999997, z: 1}
+--- !u!1 &4753416396778672145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2570031843126784706}
+  - component: {fileID: 864462964112505273}
+  - component: {fileID: 9136134339047479072}
+  m_Layer: 0
+  m_Name: Trap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2570031843126784706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753416396778672145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 0.1, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1350039826157099778}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &864462964112505273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753416396778672145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9136134339047479072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753416396778672145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510b557b02a07884796a49f0ed8cdfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapData: {fileID: 11400000, guid: 529b01d98e2034a409df7427e3966205, type: 2}
+  TrapSettingsFoldout: 1
+  _trapTrigger: {fileID: 864462964112505273}
+--- !u!1 &8866474238880771200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248950989699614094}
+  - component: {fileID: 5694925381850039942}
+  - component: {fileID: 5041664249870883783}
+  m_Layer: 0
+  m_Name: Spring
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &248950989699614094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866474238880771200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1350039826157099778}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5694925381850039942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866474238880771200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 1, y: 0, z: 1}
+--- !u!114 &5041664249870883783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866474238880771200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ddd9a43eb499a4d902afa218e3eee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trap: {fileID: 9136134339047479072}
+>>>>>>> main:UnnoetigKompliyierterDungeon/Assets/Prefabs/Traps/TestSpringTrap.prefab

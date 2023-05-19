@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bfccd25d36e9b846be325f73e968eb9, type: 3}
-  m_Name: SO_FlameData
+  m_Name: SO_SpringData
   m_EditorClassIdentifier: 
-  Name: FlameTrap
+  Name: SpringTrap
   Damage: 2
