@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 264499664061011048, guid: 3c3ba10a653207f478adfcef5cb1b237, type: 3}
   prefab_trueTrap:
   - {fileID: 7176134261591999356, guid: a46d7e0bcb512304894b0cb59a696045, type: 3}
-  - {fileID: 7176134261591999356, guid: a46d7e0bcb512304894b0cb59a696045, type: 3}
+  - {fileID: 7176134261591999356, guid: f21ef7b7b4f89304aa2ad0dcc3bcd83d, type: 3}
   Wall:
   - {fileID: 8662377918042668974, guid: 7f32e45a6849c404b9ae16bc21624186, type: 3}
   - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}

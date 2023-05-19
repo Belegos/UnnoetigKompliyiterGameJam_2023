@@ -10,7 +10,7 @@ public class BloodVFX : MonoBehaviour
 
     public void PlayBloodVFX()
     {
-        _randomVelocity = new Vector3(Random.Range(-8f, 8f), Random.Range(-8f, 8f), Random.Range(-12f, 12f));
+        _randomVelocity = new Vector3(Random.Range(-8f, 8f), Random.Range(-1f, 8f), Random.Range(-12f, 12f));
 
         _bloodBurst.SetVector3("BloodVelocity", _randomVelocity);
         
