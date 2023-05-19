@@ -10,6 +10,9 @@ public class Trap : MonoBehaviour
     [SerializeField] private BoxCollider _trapTrigger; //Collider that is a trigger on the GO
     private string _name;
     private int _damage;
+
+    public int Damage{get { return _damage;} }
+    
     // Start is called before the first frame update
     void Start()
     {
