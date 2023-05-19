@@ -47,5 +47,6 @@ public class Trap : MonoBehaviour
     private IEnumerator StartTrapCounter()
     {
         yield return new WaitForSeconds(1.0f);
+        // Start Trap
     } 
 }

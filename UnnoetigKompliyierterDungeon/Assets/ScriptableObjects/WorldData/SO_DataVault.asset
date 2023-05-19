@@ -22,3 +22,6 @@ MonoBehaviour:
   - {fileID: 0}
   Wall:
   - {fileID: 100000, guid: cbdda53aa8be0d841a4f044817656a44, type: 3}
+  - {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
+  Start: {fileID: 443350987439494554, guid: 40e0e7ab927640d428fb9ff72eeaf96d, type: 3}
+  Finish: {fileID: 2229022802427576886, guid: 1c404c266b5be4d4ea4b6ddb99b8c23c, type: 3}
