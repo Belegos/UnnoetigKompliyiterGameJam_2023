@@ -48,5 +48,6 @@ public class Trap : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         // Start Trap
+        Debug.Log("Started Trap: " + gameObject.name);
     } 
 }
