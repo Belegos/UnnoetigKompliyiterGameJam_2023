@@ -10,6 +10,8 @@ public class movement : MonoBehaviour
     #region Fields
     
     [SerializeField] private Rigidbody _rb;
+    GameObject _player;
+    Transform target;
 
     [SerializeField] private float movespeed = 5f;
     [SerializeField] private float rotationSpeed = 5f;
@@ -31,6 +33,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _player = GameObject.Find("Player");
     }
 
     void Update()
@@ -52,6 +55,7 @@ public class movement : MonoBehaviour
             {
                 bufferTimeCounter = 0;
             }
+
             
         }
     }
@@ -60,11 +64,16 @@ public class movement : MonoBehaviour
     void FixedUpdate()
     {
         _rb.velocity = new Vector3((_moveValue.x * Time.deltaTime * movespeed), _rb.velocity.y, (_moveValue.y * Time.deltaTime * movespeed));
+        if(_rb.velocity.z > 0)
+        {
+            _player.transform.Rotate(0, 50 * Time.deltaTime, 0);
+        }
     }
 
     public void UpdateMove(InputAction.CallbackContext ctx)
     {
-        _moveValue = ctx.ReadValue<Vector2>();
+        _moveValue = ctx.ReadValue<Vector2>();        
+               
     }
 
     public void UpdateJump(InputAction.CallbackContext ctx)
@@ -92,5 +101,10 @@ public class movement : MonoBehaviour
             isGrounded = true;
             canJump = true;
         }
+    }
+
+    private void OnMoveForwardTurnCharacterRight()
+    {
+        
     }
 }
