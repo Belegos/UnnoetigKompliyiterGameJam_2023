@@ -54,69 +54,22 @@ public class WorldGeneration_Script : MonoBehaviour
 
             var one = _data.prefab_trueTrap;
             int rndIndex = 0;
+
             for (int j = 0; j < _height; j++) // x achse
             {
-                if (indexHeight == 0)
+                if (i == 3 || i == 7 || i == 13) 
                 {
-                    //floortile 1
-                    one = ChooseRndArrayTile(_data, one);
-                    rndIndex = Random.Range(0, one.Length);
-                    _placeThis = Instantiate(one[rndIndex], currentRow.transform);
-                    NameFloorAndTraps(_data, one);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileOne);
-
-                    //roof 1
-                    _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileOne);
-                    _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
-                }
-
-                if (indexHeight == 1)
-                {
-                    //floortile2
-                    one = ChooseRndArrayTile(_data, one);
-                    rndIndex = Random.Range(0, one.Length);
-                    NameFloorAndTraps(_data, one);
-                    _placeThis = Instantiate(one[rndIndex], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileTwo);
-
-                    //roof 2
-                    _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileTwo);
-                    _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
-                }
-
-
-                if (indexHeight == 2)
-                {
-                    //floortile 3
-                    one = ChooseRndArrayTile(_data, one);
-                    rndIndex = Random.Range(0, one.Length);
-                    _placeThis = Instantiate(one[rndIndex], currentRow.transform);
-                    NameFloorAndTraps(_data, one);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileThree);
-
-                    //roof 3
-                    _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileThree);
-                    _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
-                }
-
-                indexHeight++;
-                if (indexHeight == _maxHeight)
-                {
-                    _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
-                    //NameFloorAndTraps(_data, one);
-                    _placeThis.transform.position =
-                        new Vector3(indexWidth * 2, _wallOffset, indexHeight * 2); //left wall
-                    _placeThis.transform.name = "Wall_Row_" + rowCount;
-                    _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
-                    _placeThis.transform.position = new Vector3(indexWidth * 2, _wallOffset, 0); //right wall
-                    _placeThis.transform.name = "Wall_Row_" + rowCount;
-
-                    indexHeight = 0;
+                    _placeThis = Instantiate(_data.BigTrap, _thisTransform);
+                    _placeThis.transform.position = new Vector3(indexWidth, 0, indexHeight);
+                    _placeThis.transform.name = "BigTrap";
+                
                     indexWidth++;
                     rowCount++;
+                    indexHeight = 0;
+                }
+                else
+                {
+                indexHeight = PlaceRowOfTiles(_data, indexHeight, currentRow, offSetZTileOne, offSetZTileTwo, offSetZTileThree, ref one, ref indexWidth);
                 }
             }
         }
@@ -128,6 +81,76 @@ public class WorldGeneration_Script : MonoBehaviour
         Debug.Log("Generated " + _floorTileCounter + " normal Floortiles.");
         Debug.Log("Generated " + _trapCounter + " normal Traptiles.");
         Debug.Log("Generated " + _falseTrapCounter + " false Traptiles.");
+    }
+
+    private int PlaceRowOfTiles(SO_WorldData _data, int indexHeight, GameObject currentRow, int offSetZTileOne,
+        int offSetZTileTwo, int offSetZTileThree, ref GameObject[] one, ref int indexWidth)
+    {
+        int rndIndex;
+        if (indexHeight == 0)
+        {
+            //floortile 1
+            one = ChooseRndArrayTile(_data, one);
+            rndIndex = Random.Range(0, one.Length);
+            _placeThis = Instantiate(one[rndIndex], currentRow.transform);
+            NameFloorAndTraps(_data, one);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileOne);
+
+            //roof 1
+            _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileOne);
+            _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
+        }
+
+        if (indexHeight == 1)
+        {
+            //floortile2
+            one = ChooseRndArrayTile(_data, one);
+            rndIndex = Random.Range(0, one.Length);
+            NameFloorAndTraps(_data, one);
+            _placeThis = Instantiate(one[rndIndex], currentRow.transform);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileTwo);
+
+            //roof 2
+            _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileTwo);
+            _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
+        }
+
+
+        if (indexHeight == 2)
+        {
+            //floortile 3
+            one = ChooseRndArrayTile(_data, one);
+            rndIndex = Random.Range(0, one.Length);
+            _placeThis = Instantiate(one[rndIndex], currentRow.transform);
+            NameFloorAndTraps(_data, one);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileThree);
+
+            //roof 3
+            _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileThree);
+            _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
+        }
+
+        indexHeight++;
+        if (indexHeight == _maxHeight)
+        {
+            _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
+            //NameFloorAndTraps(_data, one);
+            _placeThis.transform.position =
+                new Vector3(indexWidth * 2, _wallOffset, indexHeight * 2); //left wall
+            _placeThis.transform.name = "Wall_Row_" + rowCount;
+            _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
+            _placeThis.transform.position = new Vector3(indexWidth * 2, _wallOffset, 0); //right wall
+            _placeThis.transform.name = "Wall_Row_" + rowCount;
+
+            indexHeight = 0;
+            indexWidth++;
+            rowCount++;
+        }
+
+        return indexHeight;
     }
 
     private void NameFloorAndTraps(SO_WorldData _data, GameObject[] one)

@@ -27,3 +27,4 @@ MonoBehaviour:
   - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
   Start: {fileID: 443350987439494554, guid: 40e0e7ab927640d428fb9ff72eeaf96d, type: 3}
   Finish: {fileID: 2229022802427576886, guid: 1c404c266b5be4d4ea4b6ddb99b8c23c, type: 3}
+  BigTrap: {fileID: 100000, guid: 3e9d9dafc7ae0814c980ec9e58053e4f, type: 3}
