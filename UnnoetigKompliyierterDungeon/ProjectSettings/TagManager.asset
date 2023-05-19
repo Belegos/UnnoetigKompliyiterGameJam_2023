@@ -6,11 +6,14 @@ TagManager:
   tags:
   - Ground
   - Camera
+  - Wall
+  - FakeTrap
+  - Ceiling
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
   - 

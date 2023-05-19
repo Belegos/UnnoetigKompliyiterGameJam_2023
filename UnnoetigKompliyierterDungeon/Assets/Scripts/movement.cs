@@ -11,29 +11,29 @@ public class movement : MonoBehaviour
     #region Fields
     
     [SerializeField] GameObject _player;
-    [SerializeField] GameObject _virtCam;
-
     [SerializeField] private Rigidbody _rb;
-    [SerializeField] private CinemachineVirtualCamera _camera;
 
-    [SerializeField] private float jumpBoost = 5f;
+    [SerializeField] private float jumpBoost = 3f;
+    [SerializeField] private float bounce = 300f;
+
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
+
     [SerializeField] private float coyoteTimeCounter;
     [SerializeField] private float bufferTimeCounter;
 
     [SerializeField] private bool hasJumped = false;
     [SerializeField] private bool isGrounded = false;
 
-    Vector2 _moveValue;
+    private Vector2 _moveValue;
+
     #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-        _camera = GetComponent<CinemachineVirtualCamera>();
+        _rb = GetComponent<Rigidbody>();        
     }
 
     void Update()
@@ -67,24 +67,22 @@ public class movement : MonoBehaviour
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.forward * 1.1f * Time.deltaTime);
+            _player.transform.Translate(Vector3.forward * 2f * Time.deltaTime);
         }
         else if (_rb.velocity.z < 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.back * 1.1f * Time.deltaTime);
+            _player.transform.Translate(Vector3.back * 2f * Time.deltaTime);
         }
 
         if(_rb.velocity.x > 0)
         {
-            _player.transform.Translate(Vector3.right * 1.1f * Time.deltaTime);
-
+            _player.transform.Translate(Vector3.right * 2f * Time.deltaTime);            
         }
         else if(_rb.velocity.x < 0)
         {
-            _player.transform.Translate(Vector3.left * 1.1f * Time.deltaTime);
-
-        }
+            _player.transform.Translate(Vector3.left * 2f * Time.deltaTime);            
+        }        
     }
 
     public void UpdateMove(InputAction.CallbackContext ctx)
@@ -113,9 +111,16 @@ public class movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
         }
-    }
+
+        if(collision.gameObject.tag == "Wall")
+        {
+            
+            Vector3 collisionNormal = collision.contacts[0].normal;
+            _rb.AddForce(-collisionNormal * bounce * Time.deltaTime, ForceMode.Impulse);
+        }
+    }    
 }
