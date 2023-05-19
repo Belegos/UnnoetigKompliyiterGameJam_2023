@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 65ebb9950643af640a5070a9367992d1, type: 3}
   - {fileID: 100000, guid: c3d30422c98335a43a6d3b47f58df5c2, type: 3}
   prefab_falseTrap:
-  - {fileID: 0}
+  - {fileID: 649727879636800967, guid: 1976c4b2e9a9f194d96465e5e5ad9ebc, type: 3}
   prefab_trueTrap:
   - {fileID: 7176134261591999356, guid: a46d7e0bcb512304894b0cb59a696045, type: 3}
   - {fileID: 1350039826157455138, guid: f798ea0d6c688844b98223fa5bc8f9b1, type: 3}
