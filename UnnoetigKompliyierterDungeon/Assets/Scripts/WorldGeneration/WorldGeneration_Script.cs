@@ -34,6 +34,7 @@ public class WorldGeneration_Script : MonoBehaviour
         }
 
         _placeThis = Instantiate(_data.Start, _thisTransform);
+        _placeThis.transform.position = new Vector3(-2, 0, 0);
         _placeThis.transform.name = "001_Start";
 
         Vector2Int[,] _gridMap = _worldGrid.GetPlacementGrid;
