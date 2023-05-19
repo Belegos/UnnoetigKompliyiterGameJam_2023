@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
     #region Fields
     
     [SerializeField] private Rigidbody _rb;
-    GameObject _player;
+    [SerializeField] GameObject _player;
 
     [SerializeField] private float movespeed = 5f;
     // [SerializeField] private float rotationSpeed = 5f;
@@ -32,7 +32,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _player = GameObject.Find("Player");
+        // _player = GameObject.Find("Player");
     }
 
     void Update()
@@ -66,6 +66,7 @@ public class movement : MonoBehaviour
         if(_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 50 * Time.deltaTime, 0);
+           // _rb.velocity = _rb.velocity.x * 50;
         }
     }
 
