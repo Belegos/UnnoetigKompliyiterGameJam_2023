@@ -12,8 +12,6 @@ public class movement : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] GameObject _player;
 
-    [SerializeField] private float movespeed = 5f;
-    // [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float jumpBoost = 5f;
 
     [SerializeField] private float coyoteTime = 0.2f;
@@ -23,8 +21,6 @@ public class movement : MonoBehaviour
 
     [SerializeField] private bool canJump = false;
     [SerializeField] private bool isGrounded = false;
-
-    // private float prevPositionZ;
 
     Vector2 _moveValue;
     #endregion
@@ -63,7 +59,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rb.velocity = new Vector3(_moveValue.x * Time.deltaTime * movespeed, _rb.velocity.y, _moveValue.y * Time.deltaTime);
+        _rb.velocity = new Vector3(_moveValue.x * Time.deltaTime, _rb.velocity.y, _moveValue.y * Time.deltaTime);
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
@@ -73,6 +69,15 @@ public class movement : MonoBehaviour
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
             _player.transform.Translate(Vector3.back * 1.1f * Time.deltaTime);
+        }
+
+        if(_rb.velocity.x > 0)
+        {
+            _player.transform.Translate(Vector3.right * 1.1f * Time.deltaTime);
+        }
+        else if(_rb.velocity.x < 0)
+        {
+            _player.transform.Translate(Vector3.left * 1.1f * Time.deltaTime);
         }
     }
 
