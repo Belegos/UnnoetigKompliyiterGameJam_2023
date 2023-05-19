@@ -861,8 +861,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105579921041507410, guid: ba1b6368489a67a47b34cc780d3c7044,
         type: 3}
+      propertyPath: _virtCam
+      value: 
+      objectReference: {fileID: 426068933}
+    - target: {fileID: 5105579921041507410, guid: ba1b6368489a67a47b34cc780d3c7044,
+        type: 3}
+      propertyPath: jumpBoost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105579921041507410, guid: ba1b6368489a67a47b34cc780d3c7044,
+        type: 3}
       propertyPath: movespeed
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105579921041507415, guid: ba1b6368489a67a47b34cc780d3c7044,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5106758614903836687, guid: ba1b6368489a67a47b34cc780d3c7044,
         type: 3}

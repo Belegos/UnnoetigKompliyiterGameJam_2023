@@ -78,7 +78,7 @@ public class movement : MonoBehaviour
         if(_rb.velocity.x > 0)
         {
             _player.transform.Translate(Vector3.right * 1.1f * Time.deltaTime);
-            _virtCam.
+
         }
         else if(_rb.velocity.x < 0)
         {
