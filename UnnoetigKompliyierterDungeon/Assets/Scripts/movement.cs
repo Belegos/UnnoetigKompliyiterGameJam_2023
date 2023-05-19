@@ -14,6 +14,7 @@ public class movement : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
 
     [SerializeField] private float jumpBoost = 3f;
+    [SerializeField] private float bounce = 3f;
 
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float bufferTime = 0.2f;
@@ -25,7 +26,6 @@ public class movement : MonoBehaviour
     [SerializeField] private bool isGrounded = false;
 
     private Vector2 _moveValue;
-    private Vector3 offset;
 
     #endregion
 
@@ -67,21 +67,21 @@ public class movement : MonoBehaviour
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.forward * 1.3f * Time.deltaTime);
+            _player.transform.Translate(Vector3.forward * 10f * Time.deltaTime);
         }
         else if (_rb.velocity.z < 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.back * 1.3f * Time.deltaTime);
+            _player.transform.Translate(Vector3.back * 10f * Time.deltaTime);
         }
 
         if(_rb.velocity.x > 0)
         {
-            _player.transform.Translate(Vector3.right * 1.3f * Time.deltaTime);            
+            _player.transform.Translate(Vector3.right * 10f * Time.deltaTime);            
         }
         else if(_rb.velocity.x < 0)
         {
-            _player.transform.Translate(Vector3.left * 1.3f * Time.deltaTime);            
+            _player.transform.Translate(Vector3.left * 10f * Time.deltaTime);            
         }
     }
 
@@ -111,9 +111,9 @@ public class movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
         }
-    }
+    }    
 }
