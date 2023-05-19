@@ -67,22 +67,22 @@ public class movement : MonoBehaviour
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.forward * 1.1f * Time.deltaTime);
+            _player.transform.Translate(Vector3.forward * 1.3f * Time.deltaTime);
         }
         else if (_rb.velocity.z < 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.back * 1.1f * Time.deltaTime);
+            _player.transform.Translate(Vector3.back * 1.3f * Time.deltaTime);
         }
 
         if(_rb.velocity.x > 0)
         {
-            _player.transform.Translate(Vector3.right * 1.1f * Time.deltaTime);
+            _player.transform.Translate(Vector3.right * 1.3f * Time.deltaTime);
 
         }
         else if(_rb.velocity.x < 0)
         {
-            _player.transform.Translate(Vector3.left * 1.1f * Time.deltaTime);
+            _player.transform.Translate(Vector3.left * 1.3f * Time.deltaTime);
 
         }
     }
