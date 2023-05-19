@@ -1250,7 +1250,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5106758614903836687}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c7bdba4e642f63240949cc47d54cfdb1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -1269,15 +1269,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3adb534f5aa87b4c87a9c6c68b4831f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 5105579921041507421}
   _player: {fileID: 5106758614903836687}
-  movespeed: 100
+  _virtCam: {fileID: 0}
+  _rb: {fileID: 5105579921041507421}
+  _camera: {fileID: 0}
   jumpBoost: 5
   coyoteTime: 0.2
   bufferTime: 0.2
   coyoteTimeCounter: 0
   bufferTimeCounter: 0
-  canJump: 0
+  hasJumped: 0
   isGrounded: 0
 --- !u!114 &5105579921041507411
 MonoBehaviour:
@@ -1337,14 +1338,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 590463c0-2593-4afd-a8af-e8a2c42af031
     m_ActionName: Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 082ae2a7-6878-4aae-bb06-23c263c5393c
-    m_ActionName: Player/Rotation Keyboard[/Keyboard/a,/Keyboard/d,/Keyboard/s,/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1b6842b9-c134-4c84-b1c5-69fc562a932c
-    m_ActionName: Player/Rotation Controller
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 2311bb75-015a-4978-ac61-edacda99f6f6
