@@ -10,6 +10,9 @@ public class Trap : MonoBehaviour
     [SerializeField] private BoxCollider _trapTrigger; //Collider that is a trigger on the GO
     private string _name;
     private int _damage;
+
+    public int Damage{get { return _damage;} }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +42,7 @@ public class Trap : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        //TODO: Player Check and start trap via Coroutine
+        if (!other.CompareTag("Player")) return;
         StartCoroutine(StartTrapCounter());
         Debug.Log("Entered Trap: " + gameObject.name);
     }
@@ -48,5 +51,6 @@ public class Trap : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         // Start Trap
+        Debug.Log("Started Trap: " + gameObject.name);
     } 
 }
