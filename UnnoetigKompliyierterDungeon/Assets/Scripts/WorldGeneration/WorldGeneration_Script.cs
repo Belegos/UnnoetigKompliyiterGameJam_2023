@@ -33,6 +33,9 @@ public class WorldGeneration_Script : MonoBehaviour
             return;
         }
 
+        _placeThis = Instantiate(_data.Start, _thisTransform);
+        _placeThis.transform.name = "001_Start";
+
         Vector2Int[,] _gridMap = _worldGrid.GetPlacementGrid;
         int indexHeight = 0;
         int indexWidth = 0;
@@ -93,6 +96,10 @@ public class WorldGeneration_Script : MonoBehaviour
             }
         }
 
-        Debug.Log("Generated Grid: " + _height + "," + _width + "in GameObject: ", gameObject);
+                Vector3 FinishPosition = _placeThis.transform.position;
+                Debug.Log("The last Tile has the postion:" + _placeThis.transform.position.ToString());
+                _placeThis = Instantiate(_data.Finish, _thisTransform);
+                _placeThis.transform.position = FinishPosition + new Vector3(4, 0.1f, 6.1f);
+                Debug.Log("Generated Grid: " + _height + "," + _width + "in GameObject: ", gameObject);
     }
 }
