@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bloodBurst: {fileID: 8549885543677011119}
+  _bloodEffect: {fileID: 8549885543677011114}
 --- !u!1 &8549885543677011114
 GameObject:
   m_ObjectHideFlags: 0

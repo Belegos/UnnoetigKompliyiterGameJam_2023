@@ -1050,6 +1050,16 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1661543535064640348, guid: 68610ac780f2c464ab7e50bf5734f9c6,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661543535064640348, guid: 68610ac780f2c464ab7e50bf5734f9c6,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68610ac780f2c464ab7e50bf5734f9c6, type: 3}
 --- !u!1001 &3138545010536319396
