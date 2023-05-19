@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TimeCounter : MonoBehaviour
 {
@@ -27,6 +29,13 @@ public class TimeCounter : MonoBehaviour
 
     #endregion
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -45,5 +54,7 @@ public class TimeCounter : MonoBehaviour
     public void StartGame()
     {
         _isPlaying = true;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
     }
 }
