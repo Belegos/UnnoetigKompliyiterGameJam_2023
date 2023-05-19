@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Start
+  - Exit
+  - Plus
+  - Minus
+  - Options
+  - MainMenu
+  - OptionsMenu
+  - Back
   layers:
   - Default
   - TransparentFX
