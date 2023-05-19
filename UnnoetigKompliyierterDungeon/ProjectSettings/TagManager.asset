@@ -4,6 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
+  - Camera
+  - Wall
+  - FakeTrap
+  - Ceiling
   - Start
   - Exit
   - Plus
@@ -18,7 +23,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
   - 
