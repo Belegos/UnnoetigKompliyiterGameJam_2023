@@ -32,7 +32,6 @@ public class movement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        // _player = GameObject.Find("Player");
     }
 
     void Update()
@@ -63,17 +62,22 @@ public class movement : MonoBehaviour
     void FixedUpdate()
     {
         _rb.velocity = new Vector3((_moveValue.x * Time.deltaTime * movespeed), _rb.velocity.y, (_moveValue.y * Time.deltaTime * movespeed));
-        if(_rb.velocity.z > 0)
+        
+        if (_rb.velocity.z > 0)
         {
-            _player.transform.Rotate(0, 50 * Time.deltaTime, 0);
-           // _rb.velocity = _rb.velocity.x * 50;
+            _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
+            _player.transform.Translate(Vector3.forward * 1.1f * Time.deltaTime);
+        }
+        else if (_rb.velocity.z < 0)
+        {
+            _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
+            _player.transform.Translate(Vector3.back * 1.1f * Time.deltaTime);
         }
     }
 
     public void UpdateMove(InputAction.CallbackContext ctx)
     {
         _moveValue = ctx.ReadValue<Vector2>();        
-               
     }
 
     public void UpdateJump(InputAction.CallbackContext ctx)

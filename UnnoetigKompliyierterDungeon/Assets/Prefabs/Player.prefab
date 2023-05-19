@@ -1270,6 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 5105579921041507421}
+  _player: {fileID: 5106758614903836687}
   movespeed: 100
   jumpBoost: 5
   coyoteTime: 0.2
