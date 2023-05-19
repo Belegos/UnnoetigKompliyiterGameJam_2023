@@ -39,7 +39,7 @@ public class Trap : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        //TODO: Player Check and start trap via Coroutine
+        if (!other.CompareTag("Player")) return;
         StartCoroutine(StartTrapCounter());
         Debug.Log("Entered Trap: " + gameObject.name);
     }
