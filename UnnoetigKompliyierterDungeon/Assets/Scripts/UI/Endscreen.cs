@@ -7,14 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class Endscreen : MonoBehaviour
 {
-    [Header("GameObjects")] 
-    [SerializeField] private GameObject _endScreen;
+    [Header("Overall")] 
     [SerializeField] private GameObject _playScreen;
-    
-    [SerializeField] private TMP_InputField _inputField;
-    [SerializeField] private TMP_Text _timeValue;
     [SerializeField] private TimeCounter _timeCounter;
 
+    [Header("EndScreen")] 
+    [SerializeField] private GameObject _endScreen;
+    [SerializeField] private TMP_InputField _inputField;
+    [SerializeField] private TMP_Text _timeValue;
+
+    [Header("GameOverScreen")] 
+    [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private TMP_Text _timeValueGS;
+    
     private string _filePath = "times.txt";
     private bool _isActivated = false;
     
@@ -55,9 +60,8 @@ public class Endscreen : MonoBehaviour
                 sw.WriteLine($"Name: {data.Name} <-------------------> Time: {data.Time}");
             }
         }
-        Time.timeScale = 1f;
-        Cursor.visible = false;
-        SceneManager.LoadSceneAsync("MenuScene");
+
+        BackToMenuNormal();
     }
 
     public void OpenEndScreen()
@@ -68,7 +72,27 @@ public class Endscreen : MonoBehaviour
         _timeValue.text = TimeSpan.FromSeconds(_timeCounter.CurrentTime).ToString(@"m\:ss\.fff");
         _endScreen.SetActive(true);
         _playScreen.SetActive(false);
+        Cursor.visible = true;
         Time.timeScale = 0f;
+    }
+    
+    public void OpenGameOverScreen()
+    {
+        if (_timeCounter == null) return;
+        _timeValueGS.text = TimeSpan.FromSeconds(_timeCounter.CurrentTime).ToString(@"m\:ss\.fff");
+        _gameOverScreen.SetActive(true);
+        _playScreen.SetActive(false);
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+    }
+    
+    
+
+    public void BackToMenuNormal()
+    {
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        SceneManager.LoadSceneAsync(0);
     }
 }
 

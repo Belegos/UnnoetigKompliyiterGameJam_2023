@@ -7,11 +7,21 @@ using UnityEngine;
 public class ActivatedTrap : MonoBehaviour
 {
     [SerializeField]private Trap _trap;
+    [SerializeField]private BloodVFX _bloodVFX;
+
+    private PlayerData _playerData;
+    private void Start()
+    {
+        _playerData = FindObjectOfType<PlayerData>();
+        if (_playerData == null) return;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        Debug.Log("Damage Trap: " + gameObject.name);
+        Vector3 trans = other.transform.position;
+        _bloodVFX.transform.position = new Vector3(trans.x, 1.0f, trans.z);
+        _bloodVFX.PlayBloodVFX();
         other.GetComponent<PlayerData>().ReduceHealth(_trap.Damage);
     }
 }
