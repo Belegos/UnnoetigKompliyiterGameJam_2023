@@ -10,11 +10,15 @@ public class MenuPlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float timePassed;
+    [SerializeField] private float smoothTime = 0.05f;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private Slider volumeSlider;
+    private float smoothRot;
     private float timer = 3f;
     private Vector3 moveVec;
+    private float moveRot;
+    private float currentVelocity;
     private Rigidbody playerRb;
 
     void Start()
@@ -29,21 +33,22 @@ public class MenuPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (moveVec.sqrMagnitude == 0) return;
+        moveRot = Mathf.Atan2(moveVec.x, moveVec.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, moveRot, 0);
+        smoothRot = Mathf.SmoothDampAngle(transform.eulerAngles.y, smoothRot, ref currentVelocity, smoothTime);
+
         playerRb.velocity = new Vector3(moveVec.x * moveSpeed * Time.fixedDeltaTime, playerRb.velocity.y, moveVec.y * moveSpeed * Time.fixedDeltaTime);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         moveVec = context.ReadValue<Vector2>();
+        transform.Rotate(moveVec);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        //switch (other.gameObject.CompareTag(""))
-        //{
-        //    default:
-        //        break;
-        //}
         if (other.gameObject.CompareTag("Start"))
         {
             timePassed += Time.deltaTime;
@@ -61,8 +66,6 @@ public class MenuPlayerController : MonoBehaviour
                 mainMenu.SetActive(false);
                 optionsMenu.SetActive(true);
                 timePassed = 0;
-                //GameObject.FindWithTag("OptionsMenu").SetActive(true);
-                //GameObject.FindWithTag("MainMenu").SetActive(false);
             }
         }
         else if (other.gameObject.CompareTag("Exit"))
