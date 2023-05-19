@@ -24,6 +24,8 @@ public class movement : MonoBehaviour
     [SerializeField] private bool canJump = false;
     [SerializeField] private bool isGrounded = false;
 
+    // private float prevPositionZ;
+
     Vector2 _moveValue;
     #endregion
 
@@ -54,15 +56,14 @@ public class movement : MonoBehaviour
                 bufferTimeCounter = 0;
             }
 
-            
+            // prevPositionZ = _player.transform.position.z;
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rb.velocity = new Vector3((_moveValue.x * Time.deltaTime * movespeed), _rb.velocity.y, (_moveValue.y * Time.deltaTime * movespeed));
-        
+        _rb.velocity = new Vector3(_moveValue.x * Time.deltaTime * movespeed, _rb.velocity.y, _moveValue.y * Time.deltaTime);
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
@@ -77,7 +78,7 @@ public class movement : MonoBehaviour
 
     public void UpdateMove(InputAction.CallbackContext ctx)
     {
-        _moveValue = ctx.ReadValue<Vector2>();        
+        _moveValue = ctx.ReadValue<Vector2>();                          
     }
 
     public void UpdateJump(InputAction.CallbackContext ctx)
@@ -105,10 +106,5 @@ public class movement : MonoBehaviour
             isGrounded = true;
             canJump = true;
         }
-    }
-
-    private void OnMoveForwardTurnCharacterRight()
-    {
-        
     }
 }
