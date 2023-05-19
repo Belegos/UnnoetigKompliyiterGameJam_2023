@@ -387,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: b5c915c5a9d9f264cad8880664be242f, type: 2}
   _height: 3
-  _width: 3
+  _width: 15
   _wallOffset: -0.1
 --- !u!4 &2002757690
 Transform:
