@@ -11,10 +11,9 @@ public class movement : MonoBehaviour
     
     [SerializeField] private Rigidbody _rb;
     GameObject _player;
-    Transform target;
 
     [SerializeField] private float movespeed = 5f;
-    [SerializeField] private float rotationSpeed = 5f;
+    // [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float jumpBoost = 5f;
 
     [SerializeField] private float coyoteTime = 0.2f;
