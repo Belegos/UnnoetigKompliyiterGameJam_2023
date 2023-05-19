@@ -15,20 +15,20 @@ public class MenuPlayerController : MonoBehaviour
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private Slider volumeSlider;
     private float smoothRot;
-    private float timer = 3f;
-    private Vector3 moveVec;
+    private float timer = 2f;
     private float moveRot;
     private float currentVelocity;
+    private Vector3 moveVec;
     private Rigidbody playerRb;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-    }
+        for (int i = 0; i < Screen.resolutions.Length; i++)
+        {
+        Debug.Log(Screen.resolutions[i]);
 
-    void Update()
-    {
-        
+        }
     }
 
     void FixedUpdate()
@@ -49,18 +49,17 @@ public class MenuPlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        timePassed += Time.deltaTime;
+
         if (other.gameObject.CompareTag("Start"))
         {
-            timePassed += Time.deltaTime;
             if(timePassed > timer) 
             {
-            // Load game scene
-
+                SceneManager.LoadScene("GameScene");
             }
         }
         else if (other.gameObject.CompareTag("Options"))
         {
-            timePassed += Time.deltaTime;
             if (timePassed > timer)
             {
                 mainMenu.SetActive(false);
@@ -70,7 +69,6 @@ public class MenuPlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Exit"))
         {
-            timePassed += Time.deltaTime;
             if (timePassed > timer)
             {
             EditorApplication.ExitPlaymode();
@@ -78,7 +76,6 @@ public class MenuPlayerController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Back"))
         {
-            timePassed += Time.deltaTime;
             if (timePassed > timer)
             {
                 mainMenu.SetActive(true);
@@ -90,9 +87,28 @@ public class MenuPlayerController : MonoBehaviour
         {
             volumeSlider.value += 0.01f;
         }
-        else
+        else if(other.gameObject.CompareTag("Minus"))
         {
             volumeSlider.value -= 0.01f;
+        }
+        else if (other.gameObject.CompareTag("1080p"))
+        {
+            if(timePassed > timer)
+            {
+
+            Screen.SetResolution(1920, 1080, true);
+                Debug.Log(Screen.width + " " + Screen.height);
+                Debug.Log(Screen.currentResolution.ToString());
+            }
+        }
+        else if (other.gameObject.CompareTag("720p"))
+        {
+            if(timePassed > timer)
+            {
+            Screen.SetResolution(1280, 720, false);
+
+                Debug.Log(Screen.width + " " + Screen.height);
+            }
         }
 
 

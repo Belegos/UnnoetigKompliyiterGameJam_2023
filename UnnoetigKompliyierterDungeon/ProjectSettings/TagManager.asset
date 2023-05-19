@@ -12,6 +12,8 @@ TagManager:
   - MainMenu
   - OptionsMenu
   - Back
+  - 1080p
+  - 720p
   layers:
   - Default
   - TransparentFX
