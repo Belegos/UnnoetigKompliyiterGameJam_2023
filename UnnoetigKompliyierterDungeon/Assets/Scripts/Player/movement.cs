@@ -13,6 +13,8 @@ public class movement : MonoBehaviour
     [SerializeField] GameObject _player;
     [SerializeField] private Rigidbody _rb;
 
+    [SerializeField] private FootstepSounds _footstepSounds;
+
     [SerializeField] private float moveSpeed = 1.1f;
     [SerializeField] private float jumpBoost = 3f;
     [SerializeField] private float bounce = 300f;
@@ -45,7 +47,7 @@ public class movement : MonoBehaviour
         float velocityMagnitude = _rb.velocity.magnitude;
         float speedNormalized = velocityMagnitude / _rb.drag;
         animator.SetFloat("Speed", speedNormalized * 1.0f);
-        
+
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
@@ -54,18 +56,40 @@ public class movement : MonoBehaviour
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
-            if(coyoteTimeCounter < 0)
+            if (coyoteTimeCounter < 0)
             {
                 coyoteTimeCounter = 0;
             }
-            
+
             bufferTimeCounter -= Time.deltaTime;
-            if(bufferTimeCounter < 0)
+            if (bufferTimeCounter < 0)
             {
                 bufferTimeCounter = 0;
             }
 
         }
+
+        
+        if(_moveValue.y > 0)
+        {
+            _footstepSounds.PlayFootstepSounds();
+        }
+        else if(_moveValue.y < 0)
+        {
+            _footstepSounds.PlayFootstepSounds();
+        }
+        else if(_moveValue.x > 0)
+        {
+            _footstepSounds.PlayFootstepSounds();
+        }
+        else if(_moveValue.x < 0)
+        {
+            _footstepSounds.PlayFootstepSounds();
+        }
+        else
+        {
+            _footstepSounds.StopPlayFootSounds();
+        }                              
     }
 
     // Update is called once per frame
@@ -75,28 +99,28 @@ public class movement : MonoBehaviour
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            
+            _player.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);           
         }
         else if (_rb.velocity.z < 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+            _player.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);            
         }
 
-        if(_rb.velocity.x > 0)
+
+        if (_rb.velocity.x > 0)
         {
-            _player.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);            
+            _player.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
-        else if(_rb.velocity.x < 0)
+        else if (_rb.velocity.x < 0)
         {
-            _player.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);            
-        }        
+            _player.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        }
     }
 
     public void UpdateMove(InputAction.CallbackContext ctx)
     {
-        _moveValue = ctx.ReadValue<Vector2>();                          
+        _moveValue = ctx.ReadValue<Vector2>();
     }
 
     public void UpdateJump(InputAction.CallbackContext ctx)
@@ -130,7 +154,6 @@ public class movement : MonoBehaviour
             
             Vector3 collisionNormal = collision.contacts[0].normal;
             _rb.AddForce(-collisionNormal * bounce * Time.deltaTime, ForceMode.Impulse);
-            // _rb.angularVelocity = Vector3.zero;
         }
     }    
 }
