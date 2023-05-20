@@ -17,11 +17,12 @@ MonoBehaviour:
   - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
   - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
   prefab_falseTrap:
-  - {fileID: 264499664061011048, guid: 3c3ba10a653207f478adfcef5cb1b237, type: 3}
-  - {fileID: 264499664061011048, guid: 3c3ba10a653207f478adfcef5cb1b237, type: 3}
+  - {fileID: 8411233415813140815, guid: fa0672bdbe31ffa408b6b3ee32172c14, type: 3}
+  - {fileID: 8943753890160999269, guid: b42893f0e3a01c248a408a4d50f61e3c, type: 3}
   prefab_trueTrap:
-  - {fileID: 7176134261591999356, guid: a46d7e0bcb512304894b0cb59a696045, type: 3}
-  - {fileID: 7176134261591999356, guid: f21ef7b7b4f89304aa2ad0dcc3bcd83d, type: 3}
+  - {fileID: 5909398234387982336, guid: 350e005e6e032b743bb80ac2e9436d8e, type: 3}
+  - {fileID: 1100228207143806583, guid: 6c0d3810568a94749bff5c973d2dfeb9, type: 3}
+  - {fileID: 8943753890160999269, guid: b42893f0e3a01c248a408a4d50f61e3c, type: 3}
   Wall:
   - {fileID: 8662377918042668974, guid: 7f32e45a6849c404b9ae16bc21624186, type: 3}
   - {fileID: 70734619897741256, guid: b96dd46353bba3046bfb3b55d1259261, type: 3}
