@@ -36,21 +36,22 @@ public class WorldGeneration_Script : MonoBehaviour
         }
 
         _placeThis = Instantiate(_data.Start, _thisTransform);
-        _placeThis.transform.position = new Vector3(-2, 0, 0);
+        _placeThis.transform.position = new Vector3(-2, -2, 0);
         _placeThis.transform.name = "001_Start";
 
         Vector2Int[,] _gridMap = _worldGrid.GetPlacementGrid;
         int indexHeight = 0;
         int indexWidth = 0;
 
+        _thisTransform.transform.position -= new Vector3(0, -2, 0);
         for (int i = 0; i < _width; i++) // y achse
         {
             GameObject currentRow = new GameObject($"Row_" + rowCount.ToString());
             currentRow.transform.parent = _thisTransform;
             //currentRow.name = "Row_" + _width.ToString();
-            int offSetZTileOne = +4; //off set Position of the first tile
-            int offSetZTileTwo = +1; //off set Position of the second tile
-            int offSetZTileThree = -2; //off set Position of the third tile
+            int offSetZTileOne = +5; //off set Position of the first tile
+            int offSetZTileTwo = +2; //off set Position of the second tile
+            int offSetZTileThree = -1; //off set Position of the third tile
 
             var one = _data.prefab_trueTrap;
             //int rndIndex = 0;
@@ -83,11 +84,11 @@ public class WorldGeneration_Script : MonoBehaviour
             rndIndex = Random.Range(0, one.Length);
             _placeThis = Instantiate(one[rndIndex], currentRow.transform);
             NameFloorAndTraps(_data, one);
-            _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileOne);
+            _placeThis.transform.position = new Vector3(indexWidth * 2+1, -1, indexHeight + offSetZTileOne);
 
             //roof 1
             _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-            _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileOne);
+            _placeThis.transform.position = new Vector3(indexWidth * 2+1, 3.9f, indexHeight + offSetZTileOne);
             _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
         }
 
@@ -98,11 +99,11 @@ public class WorldGeneration_Script : MonoBehaviour
             rndIndex = Random.Range(0, one.Length);
             NameFloorAndTraps(_data, one);
             _placeThis = Instantiate(one[rndIndex], currentRow.transform);
-            _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileTwo);
+            _placeThis.transform.position = new Vector3(indexWidth * 2+1, -1, indexHeight + offSetZTileTwo);
 
             //roof 2
             _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-            _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileTwo);
+            _placeThis.transform.position = new Vector3(indexWidth * 2+1, 3.9f, indexHeight + offSetZTileTwo);
             _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
         }
 
@@ -114,14 +115,14 @@ public class WorldGeneration_Script : MonoBehaviour
             rndIndex = Random.Range(0, one.Length);
             _placeThis = Instantiate(one[rndIndex], currentRow.transform);
             NameFloorAndTraps(_data, one);
-            _placeThis.transform.position = new Vector3(indexWidth * 2, 0, indexHeight + offSetZTileThree);
+            _placeThis.transform.position = new Vector3(indexWidth * 2+1, -1, indexHeight + offSetZTileThree);
 
             //roof 3
             _placeThis = Instantiate(_data.Wall[1], currentRow.transform);
-            _placeThis.transform.position = new Vector3(indexWidth * 2, 3, indexHeight + offSetZTileThree);
+            _placeThis.transform.position = new Vector3(indexWidth * 2+1, 3.9f, indexHeight + offSetZTileThree);
             _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
         }
-
+//TODO:
         indexHeight++;
         if (indexHeight == _maxHeight) // place Walls and Roofs
         {
