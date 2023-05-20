@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442be1831649c594fbc8dc9e307d7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAmount: {x: 0, y: 90, z: 0}
+  rotationAmount: {x: 0, y: 0, z: -90}
   TrapData: {fileID: 11400000, guid: 529b01d98e2034a409df7427e3966205, type: 2}
   TrapSettingsFoldout: 1
 --- !u!1 &8943753890160999269
@@ -356,6 +356,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Part_Springtrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852002953916107284, guid: ba0d0e3e163118c45bc743ace0460686,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852002953916107284, guid: ba0d0e3e163118c45bc743ace0460686,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852002953916107284, guid: ba0d0e3e163118c45bc743ace0460686,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba0d0e3e163118c45bc743ace0460686, type: 3}

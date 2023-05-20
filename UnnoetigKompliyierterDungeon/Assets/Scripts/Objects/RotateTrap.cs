@@ -42,7 +42,7 @@ public class RotateTrap : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < _openTime)
         {
-            transform.rotation = Quaternion.Lerp(startRotation, targetRotation, elapsedTime / _openTime);
+            transform.rotation = Quaternion.Lerp(startRotation, targetRotation, (elapsedTime / _openTime) * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -62,7 +62,7 @@ public class RotateTrap : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, elapsedTime / duration);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, (elapsedTime / duration) * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
