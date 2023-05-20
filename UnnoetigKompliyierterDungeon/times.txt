@@ -3,3 +3,5 @@ Name: wasd <-------------------> Time: 0:05.881
 Name: ToPretentiousToEnterAName <-------------------> Time: 0:05.409
 Name: ssssssss <-------------------> Time: 0:08.548
 Name: ToPretentiousToEnterAName <-------------------> Time: 0:09.763
+Name: Hallo <-------------------> Time: 0:57.699
+Name: KEKW <-------------------> Time: 1:02.419

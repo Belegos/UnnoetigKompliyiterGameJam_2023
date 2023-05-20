@@ -55,7 +55,7 @@ public class MenuPlayerController : MonoBehaviour
         {
             if(timePassed > timer) 
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadSceneAsync(1);
             }
         }
         else if (other.gameObject.CompareTag("Options"))
@@ -71,7 +71,7 @@ public class MenuPlayerController : MonoBehaviour
         {
             if (timePassed > timer)
             {
-            EditorApplication.ExitPlaymode();
+            Application.Quit();
             }
         }
         else if (other.gameObject.CompareTag("Back"))

@@ -617,6 +617,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 11400000, guid: 467f1e6c20331cc4598aac3393fde839,
+        type: 2}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2145011662}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenGameOverScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Endscreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594724534664028972, guid: 4b2b56df1a23c2847ba981f435d5d168,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5994854252583209379, guid: 4b2b56df1a23c2847ba981f435d5d168,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -989,3 +1030,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145011662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 411525357828614637, guid: e40e368bd232ec24aa671d16cfc2f0f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 134512338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f79cf9113f81b418263b6dac51d185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

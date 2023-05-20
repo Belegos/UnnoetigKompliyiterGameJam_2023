@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_PoisonTrap
   m_EditorClassIdentifier: 
   Name: PoisonTrap
-  Damage: 8
+  Damage: 15
   OpenTime: 2
   CloseTime: 2
+  WaitTime: 2
