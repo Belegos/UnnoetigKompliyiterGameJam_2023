@@ -53,7 +53,7 @@ public class WorldGeneration_Script : MonoBehaviour
             int offSetZTileThree = -2; //off set Position of the third tile
 
             var one = _data.prefab_trueTrap;
-            int rndIndex = 0;
+            //int rndIndex = 0;
 
             for (int j = 0; j < _height; j++) // x achse
             {
