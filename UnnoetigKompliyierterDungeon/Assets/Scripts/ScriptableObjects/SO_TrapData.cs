@@ -9,4 +9,5 @@ public class SO_TrapData : ScriptableObject
     public int Damage;
     public float OpenTime = 2f;
     public float CloseTime = 2f;
+    public float WaitTime = 2f;
 }
