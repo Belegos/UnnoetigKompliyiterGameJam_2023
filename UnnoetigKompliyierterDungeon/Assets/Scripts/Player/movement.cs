@@ -13,6 +13,7 @@ public class movement : MonoBehaviour
     [SerializeField] GameObject _player;
     [SerializeField] private Rigidbody _rb;
 
+    [SerializeField] private float moveSpeed = 1.1f;
     [SerializeField] private float jumpBoost = 3f;
     [SerializeField] private float bounce = 300f;
 
@@ -67,21 +68,22 @@ public class movement : MonoBehaviour
         if (_rb.velocity.z > 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.forward * 2f * Time.deltaTime);
+            _player.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            
         }
         else if (_rb.velocity.z < 0)
         {
             _player.transform.Rotate(0, 25 * Time.deltaTime, 0);
-            _player.transform.Translate(Vector3.back * 2f * Time.deltaTime);
+            _player.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
         }
 
         if(_rb.velocity.x > 0)
         {
-            _player.transform.Translate(Vector3.right * 2f * Time.deltaTime);            
+            _player.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);            
         }
         else if(_rb.velocity.x < 0)
         {
-            _player.transform.Translate(Vector3.left * 2f * Time.deltaTime);            
+            _player.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);            
         }        
     }
 
