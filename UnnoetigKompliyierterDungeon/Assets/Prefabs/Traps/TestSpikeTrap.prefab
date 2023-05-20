@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 1065055021216337481}
   m_Layer: 0
   m_Name: TestSpikeTrap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,9 +171,9 @@ GameObject:
   - component: {fileID: 6605426742840634543}
   - component: {fileID: 6011435373832768445}
   - component: {fileID: 1867804186971764674}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrapData: {fileID: 11400000, guid: a7022cac7f5e42940bec253cd9ce50fd, type: 2}
   TrapSettingsFoldout: 1
-  _trapTrigger: {fileID: 6011435373832768445}
+  _rotateTrap: {fileID: 0}
+  _moveTrap: {fileID: 0}
 --- !u!1001 &3888426989688608555
 PrefabInstance:
   m_ObjectHideFlags: 0
