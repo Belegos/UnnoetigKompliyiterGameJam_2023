@@ -57,23 +57,12 @@ public class WorldGeneration_Script : MonoBehaviour
 
             for (int j = 0; j < _height; j++) // x achse
             {
-                if (i == 3 || i == 7 || i == 13) 
-                {
-                    _placeThis = Instantiate(_data.BigTrap, _thisTransform);
-                    _placeThis.transform.position = new Vector3(indexWidth, 0, indexHeight);
-                    _placeThis.transform.name = "BigTrap";
-                
-                    indexWidth++;
-                    rowCount++;
-                    indexHeight = 0;
-                }
-                else
-                {
-                indexHeight = PlaceRowOfTiles(_data, indexHeight, currentRow, offSetZTileOne, offSetZTileTwo, offSetZTileThree, ref one, ref indexWidth);
-                }
+                indexHeight = PlaceRowOfTiles(_data, indexHeight, currentRow, offSetZTileOne, offSetZTileTwo,
+                    offSetZTileThree, ref one, ref indexWidth);
             }
         }
-
+        //TODO: add here the hammer swing
+        //place finishing ground tile
         Vector3 FinishPosition = _placeThis.transform.position;
         _placeThis = Instantiate(_data.Finish, _thisTransform);
         _placeThis.transform.position = FinishPosition + new Vector3(4, 0.1f, 6.1f);
@@ -87,7 +76,7 @@ public class WorldGeneration_Script : MonoBehaviour
         int offSetZTileTwo, int offSetZTileThree, ref GameObject[] one, ref int indexWidth)
     {
         int rndIndex;
-        if (indexHeight == 0)
+        if (indexHeight == 0) //place 1st ground tile
         {
             //floortile 1
             one = ChooseRndArrayTile(_data, one);
@@ -102,7 +91,7 @@ public class WorldGeneration_Script : MonoBehaviour
             _placeThis.transform.name = _roofTileCount + "_Roof_Row_" + rowCount;
         }
 
-        if (indexHeight == 1)
+        if (indexHeight == 1) //place 2nd ground tile
         {
             //floortile2
             one = ChooseRndArrayTile(_data, one);
@@ -118,7 +107,7 @@ public class WorldGeneration_Script : MonoBehaviour
         }
 
 
-        if (indexHeight == 2)
+        if (indexHeight == 2) //place 3rd ground tile
         {
             //floortile 3
             one = ChooseRndArrayTile(_data, one);
@@ -134,7 +123,7 @@ public class WorldGeneration_Script : MonoBehaviour
         }
 
         indexHeight++;
-        if (indexHeight == _maxHeight)
+        if (indexHeight == _maxHeight) // place Walls and Roofs
         {
             _placeThis = Instantiate(_data.Wall[0], currentRow.transform);
             //NameFloorAndTraps(_data, one);
@@ -176,7 +165,7 @@ public class WorldGeneration_Script : MonoBehaviour
 
     private static GameObject[] ChooseRndArrayTile(SO_WorldData _data, GameObject[] one)
     {
-        int rndArray = Random.Range(0, 5);
+        int rndArray = Random.Range(0, 6);
         switch (rndArray)
         {
             case 0:
@@ -196,6 +185,9 @@ public class WorldGeneration_Script : MonoBehaviour
                 break;
             case 5:
                 one = _data.prefab_falseTrap;
+                break;
+            case 6:
+                one = _data.prefab_trueTrap;
                 break;
         }
 
