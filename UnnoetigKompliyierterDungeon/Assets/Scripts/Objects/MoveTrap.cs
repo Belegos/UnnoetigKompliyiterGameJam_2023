@@ -14,6 +14,7 @@ public class MoveTrap : MonoBehaviour
     
     private float _openTime = 2f;
     private float _closeTime = 2f;
+    private float _waitTime = 2f;
 
     private Vector3 startPos;
     private float elapsedTime;
@@ -30,6 +31,7 @@ public class MoveTrap : MonoBehaviour
     {
         _openTime = TrapData.OpenTime;
         _closeTime = TrapData.CloseTime;
+        _waitTime = TrapData.WaitTime;
     }
 
     public void OnTrapSettingsUpdated()
@@ -49,10 +51,11 @@ public class MoveTrap : MonoBehaviour
 
         }
         transform.position = _destination.transform.position;
+        yield return new WaitForSeconds(_waitTime);
         StartCoroutine(MoveBackCoroutine(startPos, _closeTime));
 
     }
-
+    
     private IEnumerator MoveBackCoroutine(Vector3 startPosition, float duration)
     {
         Vector3 targetPosition = startPosition;

@@ -8,10 +8,10 @@ public class RotateTrap : MonoBehaviour
 {
     private float _openTime = 20f;
     private float _closeTime = 10f;
+    private float _waitTime = 1f;
     [SerializeField] private Vector3 rotationAmount = new Vector3(0f, 90f, 0f);
     [Header("DATA")]
     public SO_TrapData TrapData;
-    private Coroutine _coroutine = null;    
     [HideInInspector] public bool TrapSettingsFoldout = true;
 
     private void Awake()
@@ -26,6 +26,7 @@ public class RotateTrap : MonoBehaviour
     {
         _openTime = TrapData.OpenTime;
         _closeTime = TrapData.CloseTime;
+        _waitTime = TrapData.WaitTime;
     }
 
     public void OnTrapSettingsUpdated()
@@ -49,6 +50,7 @@ public class RotateTrap : MonoBehaviour
         // Ensure the final rotation is exactly the target rotation
         transform.rotation = targetRotation;
 
+        yield return new WaitForSeconds(_waitTime);
         // Start the reverse rotation coroutine
         StartCoroutine(RotateBackCoroutine(startRotation, _closeTime));
     }
