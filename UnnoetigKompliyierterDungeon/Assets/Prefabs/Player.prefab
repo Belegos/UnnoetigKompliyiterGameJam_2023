@@ -1179,7 +1179,6 @@ GameObject:
   - component: {fileID: 5105579921041507410}
   - component: {fileID: 5105579921041507411}
   - component: {fileID: 549350632092643731}
-  - component: {fileID: 9004630822915629360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1219,7 +1218,7 @@ Animator:
   m_GameObject: {fileID: 5106758614903836687}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b5f71c859f9f9bf41badda8a4650082c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c0f49fc9d07c7e4ea714e00156b5026, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1243,7 +1242,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!136 &5105579921041507415
 CapsuleCollider:
@@ -1282,6 +1281,7 @@ MonoBehaviour:
   bufferTimeCounter: 0
   hasJumped: 0
   isGrounded: 0
+  animator: {fileID: 0}
 --- !u!114 &5105579921041507411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,19 +1400,6 @@ MonoBehaviour:
   originalMaterial: {fileID: 13400000, guid: 380614f9415a1c1418f9584557feeffd, type: 2}
   playerCollider: {fileID: 5105579921041507415}
   ignoreFrictionDuration: 1
---- !u!114 &9004630822915629360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106758614903836687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e775550350e7c4eb55c4275fe88513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerInput: {fileID: 5105579921041507411}
 --- !u!1 &5106769259271127287
 GameObject:
   m_ObjectHideFlags: 0

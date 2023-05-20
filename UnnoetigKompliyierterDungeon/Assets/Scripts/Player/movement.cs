@@ -28,17 +28,24 @@ public class movement : MonoBehaviour
 
     private Vector2 _moveValue;
 
+    [SerializeField] public Animator animator;
+
     #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();        
+        _rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        float velocityMagnitude = _rb.velocity.magnitude;
+        float speedNormalized = velocityMagnitude / _rb.drag;
+        animator.SetFloat("Speed", speedNormalized * 1.0f);
+        
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
@@ -123,6 +130,7 @@ public class movement : MonoBehaviour
             
             Vector3 collisionNormal = collision.contacts[0].normal;
             _rb.AddForce(-collisionNormal * bounce * Time.deltaTime, ForceMode.Impulse);
+            // _rb.angularVelocity = Vector3.zero;
         }
     }    
 }
