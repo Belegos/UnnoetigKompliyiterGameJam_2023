@@ -1,19 +1,17 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
+using Cursor = UnityEngine.Cursor;
+using Slider = UnityEngine.UI.Slider;
 
 public class TimeCounter : MonoBehaviour
 {
-    [FormerlySerializedAs("_timerText")] public TMP_Text TimerText;
+    public TMP_Text TimerText;
+    [SerializeField] private Slider _healthBar;
 
     private float _currentTime = 0.0f;
 
-    
+    private PlayerData _player;
 
     private bool _isPlaying = false;
 
@@ -43,6 +41,8 @@ public class TimeCounter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         Time.timeScale = 0f;
+        _player = FindObjectOfType<PlayerData>();
+        _player.OnHealthReduction.AddListener(UpdateHealthBar);
     }
 
     // Update is called once per frame
@@ -65,5 +65,10 @@ public class TimeCounter : MonoBehaviour
         _isPlaying = true;
         Cursor.visible = false;
         Time.timeScale = 1f;
+    }
+
+    private void UpdateHealthBar()
+    {
+        _healthBar.value = _player.Health;
     }
 }
