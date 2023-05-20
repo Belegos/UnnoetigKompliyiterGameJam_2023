@@ -756,6 +756,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.099999994, z: 2}
   m_Center: {x: 1, y: -0.049999997, z: 1}
+--- !u!114 &4170654477079836433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130922086059192901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d73288937f33748b967069d3eb36ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlayerEntering:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &5130922086059224677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1,
@@ -936,6 +951,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.099999994, z: 2}
   m_Center: {x: 1, y: -0.049999997, z: 1}
+--- !u!114 &7452604093604327473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866812000140965036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d73288937f33748b967069d3eb36ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlayerEntering:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6866812000141125772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 65ebb9950643af640a5070a9367992d1,
@@ -1032,3 +1062,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.099999994, z: 2}
   m_Center: {x: 1, y: -0.049999997, z: 1}
+--- !u!114 &3609815827289004531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108744544153515631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d73288937f33748b967069d3eb36ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlayerEntering:
+    m_PersistentCalls:
+      m_Calls: []
