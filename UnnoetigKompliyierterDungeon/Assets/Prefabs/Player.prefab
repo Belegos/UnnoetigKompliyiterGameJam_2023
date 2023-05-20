@@ -1218,7 +1218,7 @@ Animator:
   m_GameObject: {fileID: 5106758614903836687}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b5f71c859f9f9bf41badda8a4650082c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c0f49fc9d07c7e4ea714e00156b5026, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1281,6 +1281,7 @@ MonoBehaviour:
   bufferTimeCounter: 0
   hasJumped: 0
   isGrounded: 0
+  animator: {fileID: 0}
 --- !u!114 &5105579921041507411
 MonoBehaviour:
   m_ObjectHideFlags: 0
