@@ -47,6 +47,13 @@ public class Trap : MonoBehaviour
         Debug.Log("Entered Trap: " + gameObject.name);
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!other.gameObject.CompareTag("Player")) return;
+        StartCoroutine(StartTrapCounter());
+        Debug.Log("Entered Trap: " + gameObject.name);
+    }
+
     private IEnumerator StartTrapCounter()
     {
         yield return new WaitForSeconds(1.0f);
