@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: SpringTrap
   Damage: 2
+  OpenTime: 1
+  CloseTime: 10

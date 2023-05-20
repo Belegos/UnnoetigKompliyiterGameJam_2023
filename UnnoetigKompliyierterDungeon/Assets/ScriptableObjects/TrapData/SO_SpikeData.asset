@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: SpikeTrap
   Damage: 10
+  OpenTime: 0.5
+  CloseTime: 3

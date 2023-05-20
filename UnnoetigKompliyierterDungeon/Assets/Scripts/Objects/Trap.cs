@@ -7,9 +7,12 @@ public class Trap : MonoBehaviour
 {
     public SO_TrapData TrapData;
     [HideInInspector] public bool TrapSettingsFoldout = true;
-    [SerializeField] private BoxCollider _trapTrigger; //Collider that is a trigger on the GO
+    [SerializeField] private RotateTrap _rotateTrap; //Collider that is a trigger on the GO
+    [SerializeField] private MoveTrap _moveTrap; //Collider that is a trigger on the GO
     private string _name;
     private int _damage;
+    private Coroutine _coroutine = null;
+
 
     public int Damage{get { return _damage;} }
     
@@ -42,15 +45,30 @@ public class Trap : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
-        StartCoroutine(StartTrapCounter());
+        if (!other.CompareTag("Player") || _coroutine != null) return;
+        _coroutine = StartCoroutine(StartTrapCounter());
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!other.gameObject.CompareTag("Player") || _coroutine != null) return;
+        _coroutine = StartCoroutine(StartTrapCounter());
         Debug.Log("Entered Trap: " + gameObject.name);
     }
 
     private IEnumerator StartTrapCounter()
     {
-        yield return new WaitForSeconds(1.0f);
-        // Start Trap
-        Debug.Log("Started Trap: " + gameObject.name);
+        yield return new WaitForSeconds(0.5f);
+        if (_rotateTrap != null)
+        {
+            yield return StartCoroutine(_rotateTrap.RotateCoroutine());
+        }
+
+        if (_moveTrap != null)
+        {
+            yield return StartCoroutine(_moveTrap.MoveToSpot());
+        }
+
+        _coroutine = null;
     } 
 }
