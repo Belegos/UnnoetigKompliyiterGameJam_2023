@@ -1178,6 +1178,8 @@ GameObject:
   - component: {fileID: 5105579921041507415}
   - component: {fileID: 5105579921041507410}
   - component: {fileID: 5105579921041507411}
+  - component: {fileID: 549350632092643731}
+  - component: {fileID: 9004630822915629360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1271,17 +1273,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 5106758614903836687}
   _rb: {fileID: 5105579921041507421}
+  moveSpeed: 1.1
   jumpBoost: 5
-  bounce: 3
+  bounce: 1000
   coyoteTime: 0.2
   bufferTime: 0.2
-  groundedTime: 2
   coyoteTimeCounter: 0
   bufferTimeCounter: 0
-  isGroundedCounter: 0
   hasJumped: 0
   isGrounded: 0
-  isBouncing: 0
 --- !u!114 &5105579921041507411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,6 +1385,34 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &549350632092643731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106758614903836687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a95abcbd2324145878909cd9d7fe8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalMaterial: {fileID: 13400000, guid: 380614f9415a1c1418f9584557feeffd, type: 2}
+  playerCollider: {fileID: 5105579921041507415}
+  ignoreFrictionDuration: 1
+--- !u!114 &9004630822915629360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106758614903836687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e775550350e7c4eb55c4275fe88513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInput: {fileID: 5105579921041507411}
 --- !u!1 &5106769259271127287
 GameObject:
   m_ObjectHideFlags: 0
