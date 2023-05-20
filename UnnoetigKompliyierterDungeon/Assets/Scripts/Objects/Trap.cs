@@ -69,6 +69,7 @@ public class Trap : MonoBehaviour
             yield return StartCoroutine(_moveTrap.MoveToSpot());
         }
 
+        yield return new WaitForSeconds(1.0f);
         _coroutine = null;
     } 
 }

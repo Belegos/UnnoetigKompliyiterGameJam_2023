@@ -45,7 +45,7 @@ public class MoveTrap : MonoBehaviour
 
         while (elapsedTime < _openTime)
         {
-            transform.position = Vector3.Lerp(startPos, _destination.transform.position, (elapsedTime / _openTime));
+            transform.position = Vector3.Lerp(startPos, _destination.transform.position, (elapsedTime / _openTime) * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
 
@@ -63,7 +63,7 @@ public class MoveTrap : MonoBehaviour
         float timer = 0f;
         while (timer < duration)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, (timer / duration));
+            transform.position = Vector3.Lerp(transform.position, targetPosition, (timer / duration) * Time.deltaTime);
             timer += Time.deltaTime;
             yield return null;
         }
