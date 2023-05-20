@@ -224,11 +224,11 @@ MonoBehaviour:
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
-  m_CameraRadius: 0.3
+  m_CameraRadius: 0.1
   m_Strategy: 2
   m_MaximumEffort: 4
   m_SmoothingTime: 0
-  m_Damping: 4
+  m_Damping: 0
   m_DampingWhenOccluded: 0
   m_OptimalTargetDistance: 0
 --- !u!1 &232360960
@@ -613,14 +613,15 @@ PrefabInstance:
     - target: {fileID: 5105579921041507421, guid: 4b2b56df1a23c2847ba981f435d5d168,
         type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5106758614903836687, guid: 4b2b56df1a23c2847ba981f435d5d168,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4b2b56df1a23c2847ba981f435d5d168, type: 3}
 --- !u!1 &1878182563
 GameObject:

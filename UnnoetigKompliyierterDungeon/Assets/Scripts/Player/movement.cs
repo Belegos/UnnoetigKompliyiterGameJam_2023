@@ -123,6 +123,7 @@ public class movement : MonoBehaviour
             
             Vector3 collisionNormal = collision.contacts[0].normal;
             _rb.AddForce(-collisionNormal * bounce * Time.deltaTime, ForceMode.Impulse);
+            // _rb.angularVelocity = Vector3.zero;
         }
     }    
 }
