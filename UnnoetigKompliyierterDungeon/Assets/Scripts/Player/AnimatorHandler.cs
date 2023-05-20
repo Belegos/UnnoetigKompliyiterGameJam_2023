@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace KI_Project
-{
+
     public class AnimatorHandler : MonoBehaviour
     {
         public Animator anim;
@@ -83,4 +82,3 @@ namespace KI_Project
             canRotate = false;
         }
     }
-}
